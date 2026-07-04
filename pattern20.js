@@ -9,6 +9,7 @@ const pattern20 = (n) => {
       }
     }
     console.log("");
+    //
   }
 };
 //
