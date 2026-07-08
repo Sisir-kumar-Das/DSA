@@ -11,6 +11,7 @@ const pattern20 = (n) => {
     console.log("");
   }
 };
+//
 
 const main = () => {
   const fs = require("fs");
