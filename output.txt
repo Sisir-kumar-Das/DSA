@@ -1,5 +1,1 @@
-*****
-*   *
-*   *
-*   *
-*****
+Error: Could not read numbers from input.
