@@ -11,7 +11,6 @@ int fibonacci(int n)
 
 int main()
 {
-    // Write C++ code here
     int n, value;
     cout << "Enter a Number: ";
     cin >> n;
