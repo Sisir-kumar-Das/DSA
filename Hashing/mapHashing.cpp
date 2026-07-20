@@ -1,10 +1,8 @@
-// Online C++ compiler to run C++ program online
 #include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
-    // Write C++ code here
     vector<int> vect;
     int n, o;
     cout << "Enter the number of elements you want: ";
