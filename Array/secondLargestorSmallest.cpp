@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+//
 int secondLarge(int arr[], int n)
 {
     int largest = arr[0];
