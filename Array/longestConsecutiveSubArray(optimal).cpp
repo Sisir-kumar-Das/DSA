@@ -31,7 +31,6 @@ int longestConsecutiveSubaArray(vector<int> &a)
 
 int main()
 {
-    // Write C++ code here
     int n;
     cout << "Enter the number of array elements you want in vector a: ";
     cin >> n;
