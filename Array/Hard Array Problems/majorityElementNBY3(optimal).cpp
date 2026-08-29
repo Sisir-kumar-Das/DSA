@@ -1,3 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 class Solution
 {
 public:
@@ -39,6 +42,7 @@ public:
             if (el2 == nums[i])
                 cnt2++;
         }
+
         int mini = (int)(nums.size() / 3);
         vector<int> ls;
         if (cnt1 > mini)
@@ -49,3 +53,32 @@ public:
         return ls;
     }
 };
+
+int main()
+{
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    vector<int> nums(n);
+    cout << "Enter " << n << " elements: ";
+    for (int i = 0; i < n; i++)
+        cin >> nums[i];
+
+    Solution sol;
+    vector<int> result = sol.majorityElement(nums);
+
+    if (result.empty())
+    {
+        cout << "No element appears more than n/3 times." << endl;
+    }
+    else
+    {
+        cout << "Elements appearing more than n/3 times: ";
+        for (int x : result)
+            cout << x << " ";
+        cout << endl;
+    }
+
+    return 0;
+}
