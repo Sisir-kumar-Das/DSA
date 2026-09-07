@@ -76,7 +76,6 @@ int main()
     Solution sol2;
     cout << "Test 2: " << sol2.reversePairs(nums2) << " (expected 3)" << endl;
 
-    // Test case 6
     vector<int> nums3 = {2, 4, 3, 5, 1};
     Solution sol3;
     cout << "Test 3: " << sol3.reversePairs(nums3) << " (expected 3)" << endl;
