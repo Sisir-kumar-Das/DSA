@@ -71,16 +71,16 @@ void printResult(vector<int> &nums, int target)
 int main()
 {
     vector<int> nums1 = {5, 7, 7, 8, 8, 10};
-    printResult(nums1, 8); // Expected: [3,4]
+    printResult(nums1, 8); 
 
     vector<int> nums2 = {5, 7, 7, 8, 8, 10};
-    printResult(nums2, 6); // Expected: [-1,-1]
+    printResult(nums2, 6); 
 
     vector<int> nums3 = {};
-    printResult(nums3, 0); // Expected: [-1,-1]
+    printResult(nums3, 0); 
 
     vector<int> nums4 = {1};
-    printResult(nums4, 1); // Expected: [0,0]
+    printResult(nums4, 1); 
 
     return 0;
 }
