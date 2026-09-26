@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <algorithm> // for max_element
+#include <algorithm> 
 #include <cmath>     // for ceil
 using namespace std;
 
