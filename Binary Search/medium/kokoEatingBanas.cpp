@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm> 
-#include <cmath>     // for ceil
+#include <cmath>     
 using namespace std;
 
 class Solution
