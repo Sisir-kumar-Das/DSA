@@ -1,3 +1,8 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
 class Solution
 {
 private:
@@ -36,3 +41,19 @@ public:
         return high;
     }
 };
+
+int main()
+{
+    int n, k;
+    cout << "Enter number of stalls and number of cows: ";
+    cin >> n >> k;
+
+    vector<int> stalls(n);
+    cout << "Enter stall positions: ";
+    for (int i = 0; i < n; i++)
+        cin >> stalls[i];
+
+    Solution sol;
+    cout << "Largest minimum distance: " << sol.aggressiveCows(stalls, k) << endl;
+    return 0;
+}
