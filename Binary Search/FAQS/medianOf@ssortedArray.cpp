@@ -1,4 +1,8 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <climits>
+#include <random>
 using namespace std;
 
 class Solution
@@ -63,23 +67,24 @@ int main()
     Solution sol;
 
     // Hardcoded cases
-    vector<pair<vector<int>, vector<int>>> tests = {
-        {{1, 3}, {2}},                // 2.0
-        {{1, 2}, {3, 4}},             // 2.5
-        {{}, {1}},                    // 1.0
-        {{0, 0}, {0, 0}},             // 0.0
-        {{INT_MAX}, {INT_MAX}},       // overflow check -> 2147483647
-        {{INT_MIN}, {INT_MIN}},       // overflow check -> -2147483648
-        {{1, 2, 3, 4, 5}, {6, 7, 8}}, // 4.5
-    };
+    vector<pair<vector<int>, vector<int>>> tests;
+    tests.push_back(make_pair(vector<int>{1, 3}, vector<int>{2}));                // 2.0
+    tests.push_back(make_pair(vector<int>{1, 2}, vector<int>{3, 4}));             // 2.5
+    tests.push_back(make_pair(vector<int>{}, vector<int>{1}));                    // 1.0
+    tests.push_back(make_pair(vector<int>{0, 0}, vector<int>{0, 0}));             // 0.0
+    tests.push_back(make_pair(vector<int>{INT_MAX}, vector<int>{INT_MAX}));       // 2147483647
+    tests.push_back(make_pair(vector<int>{INT_MIN}, vector<int>{INT_MIN}));       // -2147483648
+    tests.push_back(make_pair(vector<int>{1, 2, 3, 4, 5}, vector<int>{6, 7, 8})); // 4.5
 
     cout << "--- Hardcoded tests ---\n";
-    for (auto &[a, b] : tests)
+    for (size_t i = 0; i < tests.size(); i++)
     {
+        vector<int> &a = tests[i].first;
+        vector<int> &b = tests[i].second;
         double got = sol.findMedianSortedArrays(a, b);
-        double exp = bruteForce(a, b);
-        cout << "got = " << got << ", expected = " << exp
-             << (got == exp ? "  OK" : "  MISMATCH") << "\n";
+        double want = bruteForce(a, b);
+        cout << "got = " << got << ", expected = " << want
+             << (got == want ? "  OK" : "  MISMATCH") << "\n";
     }
 
     // Random tests against brute force
@@ -90,22 +95,22 @@ int main()
     {
         int s1 = rng() % 8, s2 = rng() % 8;
         if (s1 + s2 == 0)
-            s2 = 1; // constraint: at least one element total
+            s2 = 1; // at least one element total
 
         vector<int> a(s1), b(s2);
-        for (auto &x : a)
-            x = (int)(rng() % 41) - 20;
-        for (auto &x : b)
-            x = (int)(rng() % 41) - 20;
+        for (size_t i = 0; i < a.size(); i++)
+            a[i] = (int)(rng() % 41) - 20;
+        for (size_t i = 0; i < b.size(); i++)
+            b[i] = (int)(rng() % 41) - 20;
         sort(a.begin(), a.end());
         sort(b.begin(), b.end());
 
         double got = sol.findMedianSortedArrays(a, b);
-        double exp = bruteForce(a, b);
-        if (got != exp)
+        double want = bruteForce(a, b);
+        if (got != want)
         {
             failures++;
-            cout << "MISMATCH: got " << got << ", expected " << exp << "\n";
+            cout << "MISMATCH: got " << got << ", expected " << want << "\n";
             if (failures >= 5)
                 break;
         }
